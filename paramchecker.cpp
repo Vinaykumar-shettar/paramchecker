@@ -18,6 +18,6 @@ bool IsRespRateOk(float respRate)
 	return (IsRangeOk(respRate,30,60));
 }
 
-bool VitalsAreOk(float bpm, float spo2, float respRate) {
+bool vitalsAreOk(float bpm, float spo2, float respRate) {
   return ( IsBpmOk(bpm) && IsSpo2Ok(spo2) && IsRespRateOk(respRate));
 }
