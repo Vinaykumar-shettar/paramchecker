@@ -1,27 +1,23 @@
-bool bmpAreOk(float bpm)
+bool IsRangeOk(float val, float min, float max)
 {
-	if (bpm < 70 || bpm > 150)
-		return false;
-	else 
-		return true;
+	return (val < min || val > max);
 }
 
-bool spo2AreOk(float spo2)
+bool IsBpmOk(float bpm)
 {
-	if (spo2 < 80)
-		return false;
-	else 
-		return true;
+	return (IsRangeOk(bpm, 70, 150));
+}
+
+bool IsSpo2Ok(float spo2)
+{
+	return (IsRangeOk(spo2, 80, 100));
 }
 	
-bool respRateAreOk(float respRate)
+bool IsRespRateOk(float respRate)
 {
-	if(respRate < 30 || respRate > 60)
-		return false;
-	else 
-		return true;
+	return (IsRangeOk(respRate,30,60));
 }
 
-bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  return ( bmpAreOk(bpm) && spo2AreOk(spo2) && respRateAreOk(respRate));
+bool VitalsAreOk(float bpm, float spo2, float respRate) {
+  return ( IsBpmOk(bpm) && IsSpo2Ok(spo2) && IsRespRateOk(respRate));
 }
