@@ -1,6 +1,6 @@
 bool IsRangeOk(float val, float min, float max)
 {
-	return (val < min || val > max);
+	return (val > min && val < max);
 }
 
 bool IsBpmOk(float bpm)
